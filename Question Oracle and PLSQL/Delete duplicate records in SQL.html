@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Delete duplicate records in SQL</h1>
+    <p>
+        create table emp_t(empno number,ename varchar2(100), job varchar2(100), sal number, deptno NUMBER);
+
+insert into emp_t values(1001,'KING','PRESIDENT',100000,10);
+insert into emp_t values(1002,'RAGHU','MANAGER', 80000,20);
+insert into emp_t values(1003,'FORD','MANAGER',75000,10);
+insert into emp_t values(1002,'RAGHU','MANAGER', 80000,20);
+insert into emp_t values(1004,'JAMES','MANAGER',82000,30);
+insert into emp_t values(1005,'WARD','SALESMAN',50000,10);
+insert into emp_t values(1004,'JAMES','MANAGER',82000,30);
+insert into emp_t values(1006,'FORD','SALESMAN',40000,10);
+insert into emp_t values(1004,'JAMES','MANAGER',82000,30);
+insert into emp_t values(1007,'SMITH','SALESMAN',45000,10);
+
+commit;
+
+------------------------------------------------------------------------------------------------------
+
+Method 1:
+delete from emp_t
+where rowid not in (
+select max(rowid)
+from emp_t
+group by EMPNO, ENAME, JOB, SAL, DEPTNO);
+
+------------------------------------------------------------------------------------------------------
+
+Method 2:
+delete
+from emp_t a
+where rowid > ( select min(rowid) from emp_t b
+                where a.empno = b.empno and a.ename = b.ename and a.job=b.job and a.sal= b.sal and a.deptno = b.deptno);
+
+------------------------------------------------------------------------------------------------------
+    </p>
+<p>
+Method 3:
+delete from emp_t where rowid in (     
+select rowid from (
+select rowid,
+       row_number() over(partition by EMPNO, ENAME, JOB, SAL, DEPTNO order by rowid) r
+from emp_t)
+where r >1);
+
+    </p>
+
+    <p>delete from emp_t where rowid in(
+        select rowid from(
+        select rowid,
+        dense_rank() over(partition by empno,ename,job,sal,deptno order by rowid) r
+        from emp_t)
+        where r>1);
+        
+        Reply</p>
+
+</body>
+</html>

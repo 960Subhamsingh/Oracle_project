@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+       <h1> Ref cursor in plsql </h1>
+<p>
+In PL/SQL, a REF CURSOR is a pointer that allows you to retrieve multiple rows
+ of data from a database query. It enables the passing of result sets between PL/SQL subprograms (procedures and functions) and is particularly useful for handling dynamic queries.
+</p>
+
+<p style="width:;">Key Concepts of REF CURSOR,<p></p>
+
+Definition: A REF CURSOR is a cursor variable that points to the result set of a query. You can define it as either strongly typed or weakly typed.
+
+Strongly Typed REF CURSOR: This is associated with a specific row type and is type-safe. The structure of the result set is known at compile time.
+
+Weakly Typed REF CURSOR: This is not associated with a specific row type, allowing for more flexibility in the queries executed against it.
+
+How to Use REF CURSOR in PL/SQL
+Here’s a step-by-step guide with examples:
+
+Step 1: Define the REF CURSOR Type
+You can define REF CURSOR types in a PL/SQL block, package, or type definition.
+
+Example:
+
+plsql
+Copy code
+-- Strongly typed REF CURSOR
+DECLARE
+    TYPE emp_cursor_type IS REF CURSOR RETURN employees%ROWTYPE;
+    
+    -- Weakly typed REF CURSOR
+    TYPE generic_cursor_type IS REF CURSOR;
+END;
+Step 2: Declare and Open a REF CURSOR
+You can declare a cursor variable of the type you defined and open it with a SQL query.
+
+
+<strong>Example:</strong>
+
+
+DECLARE
+    TYPE emp_cursor_type IS REF CURSOR RETURN employees%ROWTYPE;
+    
+    emp_cursor emp_cursor_type; -- Declare a cursor variable
+    emp_record employees%ROWTYPE; -- Variable to hold fetched record
+BEGIN
+    -- Open the cursor with a specific query
+    OPEN emp_cursor FOR SELECT * FROM employees WHERE department_id = 10;
+
+    -- Fetch and process each record
+    LOOP
+        FETCH emp_cursor INTO emp_record;
+        EXIT WHEN emp_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Employee: ' || emp_record.first_name || ' ' || emp_record.last_name);
+    END LOOP;
+
+    CLOSE emp_cursor; -- Close the cursor
+END;
+/
+Step 3: Using Weakly Typed REF CURSOR
+You can also use a weakly typed REF CURSOR, which is more flexible. You don't need to specify a row type when defining the cursor.
+
+Example:
+
+plsql
+Copy code
+DECLARE
+    TYPE generic_cursor_type IS REF CURSOR;
+    
+    generic_cursor generic_cursor_type; -- Declare a weakly typed cursor variable
+    v_employee_id NUMBER;
+    v_first_name VARCHAR2(50);
+    v_last_name VARCHAR2(50);
+BEGIN
+    -- Open the cursor with a specific query
+    OPEN generic_cursor FOR SELECT employee_id, first_name, last_name FROM employees;
+
+    -- Fetch and process each record
+    LOOP
+        FETCH generic_cursor INTO v_employee_id, v_first_name, v_last_name;
+        EXIT WHEN generic_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Employee ID: ' || v_employee_id || ', Name: ' || v_first_name || ' ' || v_last_name);
+    END LOOP;
+
+    CLOSE generic_cursor; -- Close the cursor
+END;
+/
+Advantages of Using REF CURSOR
+Dynamic SQL: REF CURSORs are particularly useful for dynamic SQL scenarios where the structure of the returned data may not be known at compile time.
+Flexibility: They allow you to pass result sets around between procedures and functions, making it easier to manage complex data operations.
+Summary
+REF CURSOR: A powerful feature in PL/SQL for managing and processing result sets from SQL queries.
+Strongly Typed vs. Weakly Typed: Choose strongly typed REF CURSORs for type safety and structure definition, or weakly typed REF CURSORs for flexibility with dynamic queries.
+You can use these examples as a starting point to implement REF CURSORs in your PL/SQL applications.
+
+
+
+
+    </p>
+</body>
+</html>
