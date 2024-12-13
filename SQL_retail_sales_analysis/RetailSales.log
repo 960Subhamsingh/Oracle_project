@@ -1,0 +1,214 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Thu Dec 12 09:13:44 2024
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   D:/Project/Oracle_project/SQL_retail_sales_analysis/RetailSales.ctl
+Data File:      D:\Project\Oracle_project\SQL_retail_sales_analysis\Retail Sales Analysis_utf .csv
+  Bad File:     D:/Project/Oracle_project/SQL_retail_sales_analysis/Retail Sales Analysis_utf .bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 0
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table RETAIL_SALES, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+TRANSACTIONS_ID                     FIRST     *   ,  O(") CHARACTER            
+SALE_DATE                            NEXT     *   ,  O(") CHARACTER            
+SALE_TIME                            NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TO_DATE(:sale_time, 'HH24:MI:SS')"
+CUSTOMER_ID                          NEXT     *   ,  O(") CHARACTER            
+GENDER                               NEXT     *   ,  O(") CHARACTER            
+AGE                                  NEXT     *   ,  O(") CHARACTER            
+CATEGORY                             NEXT     *   ,  O(") CHARACTER            
+QUANTITY                             NEXT     *   ,  O(") CHARACTER            
+PRICE_PER_UNIT                       NEXT     *   ,  O(") CHARACTER            
+COGS                                 NEXT     *   ,  O(") CHARACTER            
+TOTAL_SALE                           NEXT     *   ,  O(") CHARACTER            
+
+Record 1: Rejected - Error on table RETAIL_SALES, column TRANSACTIONS_ID.
+ORA-01722: invalid number
+
+Record 2: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 3: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 4: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 5: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 6: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 7: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 8: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 9: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 10: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 11: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 12: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 13: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 14: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 15: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 16: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 17: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 18: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 19: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 20: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 21: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 22: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 23: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 24: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 25: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 26: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 27: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 28: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 29: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 30: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 31: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 32: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 33: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 34: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 35: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 36: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 37: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 38: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 39: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 40: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 41: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 42: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 43: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 44: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 45: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 46: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 47: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 48: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 49: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 50: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+Record 51: Rejected - Error on table RETAIL_SALES, column SALE_DATE.
+ORA-01861: literal does not match format string
+
+
+MAXIMUM ERROR COUNT EXCEEDED - Above statistics reflect partial run.
+
+Table RETAIL_SALES:
+  0 Rows successfully loaded.
+  51 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 181632 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          0
+Total logical records read:            64
+Total logical records rejected:        51
+Total logical records discarded:        0
+
+Run began on Thu Dec 12 09:13:44 2024
+Run ended on Thu Dec 12 09:13:44 2024
+
+Elapsed time was:     00:00:00.20
+CPU time was:         00:00:00.08
